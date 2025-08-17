@@ -11,5 +11,8 @@
     "parser"
   ],
   "author": "Joe D'Alessandro",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pdf-parser": "^1.0.5"
+  }
 }
