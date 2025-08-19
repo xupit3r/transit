@@ -1,0 +1,184 @@
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+{
+  text: '0',
+  direction: 'ltr',
+  width: 4.0044788,
+  height: 53.989161030000005,
+  top: 298.1485,
+  left: 1014.0187,
+  transform: [ 7.2023, 0, 0, 7.4961, 1014.0187, 298.1485 ],
+  fontSize: 7.2023,
+  fontName: 'g_d0_f4',
+  fontOriginName: 'MBAJDU+ArialMT',
+  bold: false,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+} {
+  text: '20,000',
+  direction: 'ltr',
+  width: 21.925853600000003,
+  height: 54.21344124,
+  top: 321.79,
+  left: 996.0056,
+  transform: [ 7.2172, 0, 0, 7.5117, 996.0056, 321.79 ],
+  fontSize: 7.2172,
+  fontName: 'g_d0_f4',
+  fontOriginName: 'MBAJDU+ArialMT',
+  bold: false,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+}
+{
+  text: '0',
+  direction: 'ltr',
+  width: 4.205028,
+  height: 54.5458686,
+  top: 298.303,
+  left: 1010.3074,
+  transform: [ 7.563, 0, 0, 7.2122, 1010.3074, 298.303 ],
+  fontSize: 7.563,
+  fontName: 'g_d0_f4',
+  fontOriginName: 'MBAJDU+ArialMT',
+  bold: false,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+} {
+  text: '5,000',
+  direction: 'ltr',
+  width: 18.870963000000003,
+  height: 54.77202277000001,
+  top: 321.049,
+  left: 995.5903,
+  transform: [ 7.5787, 0, 0, 7.2271, 995.5903, 321.049 ],
+  fontSize: 7.5787,
+  fontName: 'g_d0_f4',
+  fontOriginName: 'MBAJDU+ArialMT',
+  bold: false,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+}
+{
+  text: '65+ Trips',
+  direction: 'ltr',
+  width: 39.7488,
+  height: 92.16,
+  top: 66.1369,
+  left: 806.9103,
+  transform: [ 9.6, 0, 0, 9.6, 806.9103, 66.1369 ],
+  fontSize: 9.6,
+  fontName: 'g_d0_f5',
+  fontOriginName: 'VMQLZC+ArialMT',
+  bold: false,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+} {
+  text: 'OPERATING FUNDS (000’S)',
+  direction: 'ltr',
+  width: 163.3188,
+  height: 144,
+  top: 688.1037,
+  left: 1027.7941,
+  transform: [ 12, 0, 0, 12, 1027.7941, 688.1037 ],
+  fontSize: 12,
+  fontName: 'g_d0_f7',
+  fontOriginName: 'GIZUXG+Arial-BoldMT',
+  bold: true,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+}
+{
+  text: '0',
+  direction: 'ltr',
+  width: 4.1326368,
+  height: 55.16698488000001,
+  top: 294.0328,
+  left: 727.5395,
+  transform: [ 7.4328, 0, 0, 7.4221, 727.5395, 294.0328 ],
+  fontSize: 7.4328,
+  fontName: 'g_d0_f4',
+  fontOriginName: 'MBAJDU+ArialMT',
+  bold: false,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+} {
+  text: '100,000',
+  direction: 'ltr',
+  width: 26.7096038,
+  height: 55.396731249999995,
+  top: 318.6755,
+  left: 704.8237,
+  transform: [ 7.4483, 0, 0, 7.4375, 704.8237, 318.6755 ],
+  fontSize: 7.4483,
+  fontName: 'g_d0_f4',
+  fontOriginName: 'MBAJDU+ArialMT',
+  bold: false,
+  italic: false,
+  black: false,
+  color: '[0,0,0]'
+}
+{
+  "urban": [
+    {
+      "Square Miles:": "830",
+      "Population:": "3,511,062",
+      "Total Passengers:": "197,879,834",
+      "Senior Passengers:": "18,411,878",
+      "Revenue Vehicle Miles:": " 76,953,068 ",
+      "Revenue Vehicle Hours:": " 6,417,870 ",
+      "Section 1513 Allocation:": "$849,850,220 ",
+      "Required Local Match:": "$127,477,533 ",
+      "Diesel Motor Bus:": "1,321",
+      "Commuter Rail Cars:": "411",
+      "Heavy Rail Cars:": "349",
+      "Street Car Rail/Light Rail:": "149",
+      "Trolley Bus:": "38",
+      "Gasoline Paratransit Vehicles:": "414",
+      "Fixed Route Base:": "$2.50",
+      "Last Base Fare Increase:": "July 2017"
+    },
+    {
+      "Square Miles:": "775",
+      "Population:": "1,238,090",
+      "Total Passengers:": " 37,128,174 ",
+      "Senior Passengers:": " 3,643,286 ",
+      "Revenue Vehicle Miles:": " 21,697,618 ",
+      "Revenue Vehicle Hours:": " 1,684,347 ",
+      "Section 1513 Allocation:": "$280,382,707 ",
+      "Required Local Match:": "$42,057,406 ",
+      "Street Car Rail/Light Rail:": "81",
+      "Fixed Route Base:": "$2.75",
+      "Last Base Fare Increase:": "January 2022"
+    }
+  ],
+  "community": [
+    {
+      "65+ Population:": "230,947",
+      "% of Population 65 and older:": "14.4%",
+      "65+ Trips:": "354,214",
+      "Total Escorts:": "18,247",
+      "Average Shared-Ride Cost per Trip:": "$77.92"
+    },
+    {
+      "65+ Population:": "15,294",
+      "% of Population 65 and older:": "23.7%",
+      "65+ Trips:": "423,376",
+      "PwD Trips:": "21,081",
+      "Other Shared-Ride Trips:": "233,398",
+      "Total Escorts:": "43,272",
+      "Average Shared-Ride Cost per Trip:": "$47.08"
+    }
+  ]
+}

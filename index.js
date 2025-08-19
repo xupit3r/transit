@@ -2,36 +2,64 @@ const pdfParser = require('pdf-parser');
 
 const PDF_PATH = 'transit.pdf';
 
+const URBAN_KEYS = [
+	"Square Miles:",
+	"Population:",
+	"Total Passengers:",
+	"Senior Passengers:",
+	"Revenue Vehicle Miles:",
+	"Revenue Vehicle Hours:",
+	"Section 1513 Allocation:",
+	"Required Local Match:",
+	"Diesel Motor Bus:",
+	"Commuter Rail Cars:",
+	"Heavy Rail Cars:",
+	"Street Car Rail/Light Rail:",
+	"Trolley Bus:",
+	"Gasoline Paratransit Vehicles:",
+	"Fixed Route Base:",
+	"Last Base Fare Increase:"
+];
+
+const COMMUNITY_KEYS = [
+	"65+ Population:",
+	"% of Population 65 and older:",
+	"65+ Trips:",
+	"PwD Trips:",
+	"Other Shared-Ride Trips:",
+	"Total Escorts:",
+	"Average Shared-Ride Cost per Trip:",
+	"Fare Structure Implementation"
+]
+
 const URBAN_TRANSPORT_PAGES = [
-	38
+	38,
+	40
 ];
 
 const COMMUNITY_TRANSPORT_PAGES = [
-	39
+	39,
+	41
 ];
 
-const extractPages = (pages, start, end) => pages.map(
-	page => extractPage(page, start, end)
-);
+const extractPages = (pages, keys) => {
+	return pages.map(page => {
+		return extractPage(page, keys)
+	});
+}
 const filterPages = (pdf, desired) => pdf.pages.filter(page => {
 	return desired.indexOf(page.pageId + 1) > -1;
 });
 
-const extractPage = (page, start, end) => {
-	const startIdx = page.texts.findIndex(entry => {
-		return entry.text.trim() === start;
-	});
-	const endIdx = page.texts.findIndex(entry => {
-		return entry.text.trim() === end;
-	}) + 2;
-	const relevant = page.texts.slice(startIdx, endIdx);
-	const text = relevant.filter(entry => {
-		return !entry.bold;
-	}).map(entry => entry.text);
+const extractPage = ({ pageId, texts }, keys) => {
 	const pairs = {};
 
-	for (let i = 0; i < text.length; i += 2) {
-		pairs[text[i]] = text[i + 1];
+	console.log(texts[0].text, texts[1].text)
+
+	for (let i = 0; i < texts.length; i++) {
+		if (keys.indexOf(texts[i].text) > -1) {
+			pairs[texts[i].text] = texts[i + 1].text;
+		}
 	}
 
 	return pairs;
@@ -48,15 +76,16 @@ pdfParser.pdf2json(PDF_PATH, (err, pdf) => {
 
 	const urbanResults = extractPages(
 		filterPages(pdf, URBAN_TRANSPORT_PAGES),
-		"URBAN SYSTEM",
-		"Last Base Fare Increase:"
+		URBAN_KEYS
 	);
 
 	const communityResults = extractPages(
 		filterPages(pdf, COMMUNITY_TRANSPORT_PAGES),
-		"COMMUNITY TRANSPORTATION",
-		"Community Transportation:"
+		COMMUNITY_KEYS
 	);
 
-
+	console.log(JSON.stringify({
+		urban: urbanResults,
+		community: communityResults
+	}, null, 2))
 });
