@@ -30,31 +30,21 @@ const COMMUNITY_KEYS = [
 	"Total Escorts:",
 	"Average Shared-Ride Cost per Trip:",
 	"Fare Structure Implementation"
-]
-
-const URBAN_TRANSPORT_PAGES = [
-	38,
-	40
 ];
 
-const COMMUNITY_TRANSPORT_PAGES = [
-	39,
-	41
-];
+const AUTHORITIES = [{
+	name: "prt",
+	urban: 38,
+	community: 39
+}, {
+	name: "septa",
+	urban: 40,
+	community: 41
+}];
 
-const extractPages = (pages, keys) => {
-	return pages.map(page => {
-		return extractPage(page, keys)
-	});
-}
-const filterPages = (pdf, desired) => pdf.pages.filter(page => {
-	return desired.indexOf(page.pageId + 1) > -1;
-});
-
-const extractPage = ({ pageId, texts }, keys) => {
+const extractPage = (pdf, pageId, keys) => {
+	const { texts } = pdf.pages.find(page => page.pageId + 1 === pageId);
 	const pairs = {};
-
-	console.log(texts[0].text, texts[1].text)
 
 	for (let i = 0; i < texts.length; i++) {
 		if (keys.indexOf(texts[i].text) > -1) {
@@ -74,18 +64,25 @@ pdfParser.pdf2json(PDF_PATH, (err, pdf) => {
 		return console.error(err);
 	}
 
-	const urbanResults = extractPages(
-		filterPages(pdf, URBAN_TRANSPORT_PAGES),
-		URBAN_KEYS
-	);
+	const results = AUTHORITIES.map(authority => {
+		const urban = extractPage(
+			pdf,
+			authority.urban,
+			URBAN_KEYS
+		);
 
-	const communityResults = extractPages(
-		filterPages(pdf, COMMUNITY_TRANSPORT_PAGES),
-		COMMUNITY_KEYS
-	);
+		const community = extractPage(
+			pdf,
+			authority.community,
+			COMMUNITY_KEYS
+		);
 
-	console.log(JSON.stringify({
-		urban: urbanResults,
-		community: communityResults
-	}, null, 2))
+		return {
+			...authority,
+			urban,
+			community
+		};
+	});
+
+	console.log(JSON.stringify(results, null, 2))
 });
