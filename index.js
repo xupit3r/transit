@@ -2,7 +2,7 @@ const pdfParser = require('pdf-parser');
 
 const PDF_PATH = 'transit.pdf';
 
-const URBAN_KEYS = [
+const DEMO_KEYS = [
 	"Square Miles:",
 	"Population:",
 	"Total Passengers:",
@@ -34,12 +34,20 @@ const COMMUNITY_KEYS = [
 
 const AUTHORITIES = [{
 	name: "prt",
-	urban: 38,
+	demo: 38,
 	community: 39
 }, {
 	name: "septa",
-	urban: 40,
+	demo: 40,
 	community: 41
+}, {
+	name: "lanta",
+	demo: 80,
+	community: 81
+}, {
+	name: "westmoreland",
+	demo: 110,
+	community: 111
 }];
 
 const extractPage = (pdf, pageId, keys) => {
@@ -65,10 +73,10 @@ pdfParser.pdf2json(PDF_PATH, (err, pdf) => {
 	}
 
 	const results = AUTHORITIES.map(authority => {
-		const urban = extractPage(
+		const demo = extractPage(
 			pdf,
-			authority.urban,
-			URBAN_KEYS
+			authority.demo,
+			DEMO_KEYS
 		);
 
 		const community = extractPage(
@@ -79,7 +87,7 @@ pdfParser.pdf2json(PDF_PATH, (err, pdf) => {
 
 		return {
 			...authority,
-			urban,
+			demo,
 			community
 		};
 	});

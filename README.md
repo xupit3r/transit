@@ -7,22 +7,32 @@ node index.js
 ```
 
 # Output
-for each page we parse, an output like the following will be generated
+after running the above command, you will get a file called `results.json` with content like below:
 
 ```
-{
-  'Square Miles:': '1,221',
-  'Population:': '1,238,090',
-  '65+ Population:': '15,294',
-  '% of Population 65 and older:': '23.7%',
-  '65+ Trips:': '423,376',
-  'PwD Trips:': '21,081',
-  'Other Shared-Ride Trips:': '233,398',
-  'Total Escorts:': '43,272',
-  'Allegheny:': '19, 20, 21, 23, 24, 25, 27, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 42, 44, 45, 46',
-  'Allegheny:': '37, 38, 42, 43, 45',
-  'Average Shared-Ride Fare:': '$24.74',
-  'Average Shared-Ride Cost per Trip:': '$47.08',
-  'Community Transportation:': '167'
-}
+  {
+    "name": "prt",
+    "demo": {
+      "Square Miles:": "775",
+      "Population:": "1,238,090",
+      "Total Passengers:": " 37,128,174 ",
+      "Senior Passengers:": " 3,643,286 ",
+      "Revenue Vehicle Miles:": " 21,697,618 ",
+      "Revenue Vehicle Hours:": " 1,684,347 ",
+      "Section 1513 Allocation:": "$280,382,707 ",
+      "Required Local Match:": "$42,057,406 ",
+      "Street Car Rail/Light Rail:": "81",
+      "Fixed Route Base:": "$2.75",
+      "Last Base Fare Increase:": "January 2022"
+    },
+    "community": {
+      "65+ Population:": "15,294",
+      "% of Population 65 and older:": "23.7%",
+      "65+ Trips:": "423,376",
+      "PwD Trips:": "21,081",
+      "Other Shared-Ride Trips:": "233,398",
+      "Total Escorts:": "43,272",
+      "Average Shared-Ride Cost per Trip:": "$47.08"
+    }
+  },
 ```
